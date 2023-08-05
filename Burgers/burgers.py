@@ -1,4 +1,5 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.compat.v1.disable_v2_behavior()
 import numpy as np
 import matplotlib.pyplot as plt
 import time
@@ -124,9 +125,9 @@ def fit(x_f, t_f, x0, t0, u0, x_lb, t_lb, x_ub, t_ub, col_weights, u_weights, tf
     batch_sz = N_f
     n_batches =  N_f // batch_sz
     start_time = time.time()
-    tf_optimizer = tf.keras.optimizers.Adam(lr = 0.005, beta_1=.90)
-    tf_optimizer_coll = tf.keras.optimizers.Adam(lr = 0.005, beta_1=.90)
-    tf_optimizer_u = tf.keras.optimizers.Adam(lr = 0.005, beta_1=.90)
+    tf_optimizer = tf.keras.optimizers.SGD(lr = 0.005)
+    tf_optimizer_coll = tf.keras.optimizers.SGD(lr = 0.005)
+    tf_optimizer_u = tf.keras.optimizers.SGD(lr = 0.005)
 
     print("starting Adam training")
 
