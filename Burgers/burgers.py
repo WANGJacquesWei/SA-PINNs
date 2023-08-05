@@ -1,5 +1,4 @@
-import tensorflow.compat.v1 as tf
-tf.compat.v1.disable_v2_behavior()
+import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 import time
