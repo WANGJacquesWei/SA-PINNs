@@ -86,7 +86,7 @@ def loss(x_f_batch, t_f_batch,
 
 
     return  mse_0_u + mse_b_u + mse_f_u , mse_0_u, mse_f_u
-# why the weights are in tf.square ?
+# why the weights are in tf.square ? different from paper 
 
 @tf.function
 def f_model(x,t):
