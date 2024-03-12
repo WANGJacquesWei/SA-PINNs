@@ -86,7 +86,7 @@ def loss(x_f_batch, t_f_batch,
 
 
     return  mse_0_u + mse_b_u + mse_f_u , mse_0_u, mse_f_u
-
+# the col_weights and u_weights are the key for SA PINN 
 
 @tf.function
 def f_model(x,t):
